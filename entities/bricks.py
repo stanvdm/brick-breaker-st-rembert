@@ -14,16 +14,9 @@ class Brick:
 
     def render(self, surf):
         pygame.draw.rect(surf, self.color, self.rect())
-    
-    def ball_collision(self, ball):
-        if not (ball.x <= self.x + self.width and ball.x >= self.x):
-            return False
-        if not (ball.y - ball.radius <= self.y + self.height):
-            return False
-        return True
 
 class Bricks:
-    def __init__(self, gap = 10, grid_size = (8, 4)):
+    def __init__(self, gap = 5, grid_size = (9, 4)):
         self.grid_size = grid_size
         self.gap = gap
         self.grid = {}
